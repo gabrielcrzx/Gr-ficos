@@ -5,11 +5,11 @@ import plotly.graph_objects as go
 
 # 1. Carregar os dados (ignorando as 4 primeiras linhas e o total no final)
 # 2018-2020
-df_valor = pd.read_csv('ValoresRegiao2018-2020.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
-df_qtd = pd.read_csv('ComplexidadeRegiao2018-2020.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
+df_valor = pd.read_csv('https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/ValoresRegiao2018-2020.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
+df_qtd = pd.read_csv('https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/ComplexidadeRegiao2018-2020.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
 # 2023-2024
-df_valor2 = pd.read_csv('ValoresRegiao2023-2024.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
-df_qtd2 = pd.read_csv('ComplexidadeRegiao2023-2024.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
+df_valor2 = pd.read_csv('https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/ValoresRegiao2023-2024.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
+df_qtd2 = pd.read_csv('https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/ComplexidadeRegiao2023-2024.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
 
 # 2. Limpar os dados
 def LimpezaDaColDinheiro(col):

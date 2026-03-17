@@ -4,9 +4,9 @@ import plotly.graph_objects as go
 # 1. carregamento dos dados.
 
 # Dados Financeiros 2018-2020
-df_valor = pd.read_csv('ValoresRegiao2018-2020.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
+df_valor = pd.read_csv('https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/ValoresRegiao2018-2020.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
 # Dados Financeiros 2023-2024
-df_valor2 = pd.read_csv('ValoresRegiao2023-2024.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
+df_valor2 = pd.read_csv('https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/ValoresRegiao2023-2024.csv', sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
 
 df_valor.rename(columns={df_valor.columns[0]: 'Regiao/UF'}, inplace=True)
 df_valor2.rename(columns={df_valor2.columns[0]: 'Regiao/UF'}, inplace=True)
