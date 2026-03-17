@@ -1,0 +1,49 @@
+ Produção Ambulatorial do SUS - Brasil - por local de atendimento
+Valor aprovado por Região/UF e Complexidade
+Procedimento: 0301030014 SAMU 192:ATENDIMENTO DAS CHAMADAS RECEBIDAS PELA CENTRAL DE REGULACAO DAS URGENCIAS, 0301030111 REGULACAO MEDICA DE URGENCIA DA CENTRAL SAMU 192 C/ ACIONAMENTO DE MULTIPLOS MEIOS, 0301030146 SAMU 192: ATENDIMENTO DAS CHAMADAS RECEBIDAS PELA CENTRAL DE REGULACAO DAS URGENCIAS COM ORIENTAC, 0301060029 ATENDIMENTO DE URGENCIA C/ OBSERVACAO ATE 24 HORAS EM ATENCAO ESPECIALIZADA, 0301060037 ATENDIMENTO DE URGENCIA EM ATENCAO BASICA, 0301060045 ATENDIMENTO DE URGENCIA EM ATENCAO PRIMARIA COM OBSERVACAO ATE 8 HORAS, 0301060053 ATENDIMENTO DE URGENCIA EM ATENCAO PRIMARIA COM REMOCAO, 0301060061 ATENDIMENTO DE URGENCIA EM ATENCAO ESPECIALIZADA, 0301080399 MATRICIAMENTO DE EQUIPES DOS PONTOS DE ATENCAO DA URGENCIA E EMERGENCIA, E DOS SERVICOS HOSPITAL, 0413010023 ATENDIMENTO DE URGENCIA EM PEQUENO QUEIMADO
+Período:2018-2020
+"Região/UF";"Média complexidade";"Não se aplica";"Total"
+"Região Norte";310145426,96;-;310145426,96
+".. Rondônia";35671879,66;-;35671879,66
+".. Acre";13896389,15;-;13896389,15
+".. Amazonas";101043131,22;-;101043131,22
+".. Roraima";20158419,75;-;20158419,75
+".. Pará";100000968,48;-;100000968,48
+".. Amapá";14854780,16;-;14854780,16
+".. Tocantins";24519858,54;-;24519858,54
+"Região Nordeste";1083358519,38;933069,09;1084291588,47
+".. Maranhão";233917742,39;615209,09;234532951,48
+".. Piauí";52122881,53;-;52122881,53
+".. Ceará";144382851,60;-;144382851,60
+".. Rio Grande do Norte";88490215,88;-;88490215,88
+".. Paraíba";69289001,01;317860,00;69606861,01
+".. Pernambuco";198565030,37;-;198565030,37
+".. Alagoas";65745239,13;-;65745239,13
+".. Sergipe";40106094,75;-;40106094,75
+".. Bahia";190739462,72;-;190739462,72
+"Região Sudeste";1251333770,19;162826,00;1251496596,19
+".. Minas Gerais";189834939,30;-;189834939,30
+".. Espírito Santo";60126996,46;-;60126996,46
+".. Rio de Janeiro";297864922,03;162826,00;298027748,03
+".. São Paulo";703506912,40;-;703506912,40
+"Região Sul";437599377,04;-;437599377,04
+".. Paraná";94134717,92;-;94134717,92
+".. Santa Catarina";115043287,86;-;115043287,86
+".. Rio Grande do Sul";228421371,26;-;228421371,26
+"Região Centro-Oeste";253607418,73;4080,00;253611498,73
+".. Mato Grosso do Sul";32490103,76;-;32490103,76
+".. Mato Grosso";43002263,33;-;43002263,33
+".. Goiás";124660587,12;4080,00;124664667,12
+".. Distrito Federal";53454464,52;-;53454464,52
+"Total";3336044512,30;1099975,09;3337144487,39
+ Fonte: Ministério da Saúde - Sistema de Informações Ambulatoriais do SUS (SIA/SUS)
+ Notas:
+ 
+ Dados referentes aos últimos seis meses, sujeitos a  atualização.
+ A partir do processamento de junho de 2012, houve mudança na classificação da natureza e esfera dos estabelecimentos. Com isso, temos que:
+      
+      Até maio de 2012 estas informações estão disponíveis como "Natureza" e "Esfera Administrativa".
+      De junho de 2012 a outubro de 2015, estão disponíveis tanto como "Natureza" e "Esfera Administrativa", como "Natureza Jurídica" e "Esfera Jurídica".
+      A partir de novembro de 2015, estão disponíveis como "Natureza Jurídica" e "Esfera Jurídica".
+      
+ 
