@@ -1,49 +1,49 @@
- ProduÁ„o Ambulatorial do SUS - Brasil - por local de atendimento
-Qtd.aprovada por Regi„o/UF e Complexidade
+ Produ√ß√£o Ambulatorial do SUS - Brasil - por local de atendimento
+Qtd.aprovada por Regi√£o/UF e Complexidade
 Procedimento: 0301030014 SAMU 192:ATENDIMENTO DAS CHAMADAS RECEBIDAS PELA CENTRAL DE REGULACAO DAS URGENCIAS, 0301030111 REGULACAO MEDICA DE URGENCIA DA CENTRAL SAMU 192 C/ ACIONAMENTO DE MULTIPLOS MEIOS, 0301030146 SAMU 192: ATENDIMENTO DAS CHAMADAS RECEBIDAS PELA CENTRAL DE REGULACAO DAS URGENCIAS COM ORIENTAC, 0301060029 ATENDIMENTO DE URGENCIA C/ OBSERVACAO ATE 24 HORAS EM ATENCAO ESPECIALIZADA, 0301060037 ATENDIMENTO DE URGENCIA EM ATENCAO BASICA, 0301060045 ATENDIMENTO DE URGENCIA EM ATENCAO PRIMARIA COM OBSERVACAO ATE 8 HORAS, 0301060053 ATENDIMENTO DE URGENCIA EM ATENCAO PRIMARIA COM REMOCAO, 0301060061 ATENDIMENTO DE URGENCIA EM ATENCAO ESPECIALIZADA, 0301080399 MATRICIAMENTO DE EQUIPES DOS PONTOS DE ATENCAO DA URGENCIA E EMERGENCIA, E DOS SERVICOS HOSPITAL, 0413010023 ATENDIMENTO DE URGENCIA EM PEQUENO QUEIMADO
-PerÌodo:2023-2024
-"Regi„o/UF";"AtenÁ„o B·sica";"MÈdia complexidade";"N„o se aplica";"Total"
-"Regi„o Norte";1352414;25893293;1622152;28867859
-".. RondÙnia";76051;2749090;103208;2928349
+Per√≠odo:2023-2024
+"Regi√£o/UF";"Aten√ß√£o B√°sica";"M√©dia complexidade";"N√£o se aplica";"Total"
+"Regi√£o Norte";1352414;25893293;1622152;28867859
+".. Rond√¥nia";76051;2749090;103208;2928349
 ".. Acre";24398;1134743;138131;1297272
 ".. Amazonas";63662;7456736;508354;8028752
 ".. Roraima";574;1163891;55232;1219697
-".. Par·";1007918;9397087;613740;11018745
-".. Amap·";6115;1903996;88770;1998881
+".. Par√°";1007918;9397087;613740;11018745
+".. Amap√°";6115;1903996;88770;1998881
 ".. Tocantins";173696;2087750;114717;2376163
-"Regi„o Nordeste";2645723;79284315;9148738;91078776
-".. Maranh„o";324899;14336628;638756;15300283
-".. PiauÌ";382985;3619472;215780;4218237
-".. Cear·";201129;12107700;1250962;13559791
+"Regi√£o Nordeste";2645723;79284315;9148738;91078776
+".. Maranh√£o";324899;14336628;638756;15300283
+".. Piau√≠";382985;3619472;215780;4218237
+".. Cear√°";201129;12107700;1250962;13559791
 ".. Rio Grande do Norte";245728;6183918;386480;6816126
-".. ParaÌba";69615;6195403;1314494;7579512
+".. Para√≠ba";69615;6195403;1314494;7579512
 ".. Pernambuco";586993;15017436;2064320;17668749
 ".. Alagoas";66932;4247935;367536;4682403
 ".. Sergipe";230406;2928865;614437;3773708
 ".. Bahia";537036;14646958;2295973;17479967
-"Regi„o Sudeste";20000084;100648888;18139099;138788071
+"Regi√£o Sudeste";20000084;100648888;18139099;138788071
 ".. Minas Gerais";1872630;19337491;4864397;26074518
-".. EspÌrito Santo";595797;5823198;1167983;7586978
+".. Esp√≠rito Santo";595797;5823198;1167983;7586978
 ".. Rio de Janeiro";1219494;28206099;2962245;32387838
-".. S„o Paulo";16312163;47282100;9144474;72738737
-"Regi„o Sul";2823341;33260311;6127494;42211146
-".. Paran·";1736573;7558301;2334015;11628889
+".. S√£o Paulo";16312163;47282100;9144474;72738737
+"Regi√£o Sul";2823341;33260311;6127494;42211146
+".. Paran√°";1736573;7558301;2334015;11628889
 ".. Santa Catarina";458571;9339793;1588010;11386374
 ".. Rio Grande do Sul";628197;16362217;2205469;19195883
-"Regi„o Centro-Oeste";591962;20989934;3175440;24757336
+"Regi√£o Centro-Oeste";591962;20989934;3175440;24757336
 ".. Mato Grosso do Sul";133629;3178835;545842;3858306
 ".. Mato Grosso";204012;3020983;435180;3660175
-".. Goi·s";251880;10808945;617454;11678279
+".. Goi√°s";251880;10808945;617454;11678279
 ".. Distrito Federal";2441;3981171;1576964;5560576
 "Total";27413524;260076741;38212923;325703188
- Fonte: MinistÈrio da Sa˙de - Sistema de InformaÁıes Ambulatoriais do SUS (SIA/SUS)
+ Fonte: Minist√©rio da Sa√∫de - Sistema de Informa√ß√µes Ambulatoriais do SUS (SIA/SUS)
  Notas:
  
- Dados referentes aos ˙ltimos seis meses, sujeitos a  atualizaÁ„o.
- A partir do processamento de junho de 2012, houve mudanÁa na classificaÁ„o da natureza e esfera dos estabelecimentos. Com isso, temos que:
+ Dados referentes aos √∫ltimos seis meses, sujeitos a  atualiza√ß√£o.
+ A partir do processamento de junho de 2012, houve mudan√ßa na classifica√ß√£o da natureza e esfera dos estabelecimentos. Com isso, temos que:
       
-      AtÈ maio de 2012 estas informaÁıes est„o disponÌveis como "Natureza" e "Esfera Administrativa".
-      De junho de 2012 a outubro de 2015, est„o disponÌveis tanto como "Natureza" e "Esfera Administrativa", como "Natureza JurÌdica" e "Esfera JurÌdica".
-      A partir de novembro de 2015, est„o disponÌveis como "Natureza JurÌdica" e "Esfera JurÌdica".
+      At√© maio de 2012 estas informa√ß√µes est√£o dispon√≠veis como "Natureza" e "Esfera Administrativa".
+      De junho de 2012 a outubro de 2015, est√£o dispon√≠veis tanto como "Natureza" e "Esfera Administrativa", como "Natureza Jur√≠dica" e "Esfera Jur√≠dica".
+      A partir de novembro de 2015, est√£o dispon√≠veis como "Natureza Jur√≠dica" e "Esfera Jur√≠dica".
       
  
