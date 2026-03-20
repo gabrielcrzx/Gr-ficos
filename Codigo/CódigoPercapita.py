@@ -2,7 +2,7 @@ import pandas as pd
 
 # 1. carregar
 
-url_pop = 'População2018-2020e2024.csv' 
+url_pop = 'https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/Populacao2018-2020e2024.csv' 
 df_pop = pd.read_csv(url_pop, sep=';', skiprows=2, engine='python')
 
 # Renomeando
@@ -28,8 +28,8 @@ df_pop_capitais['Pop_2023'] = df_pop_capitais['Pop_2024']
 
 # 2. carregar os anos do datasus
 
-url_sus_18_20 = 'sia_cnv_qabr172343179_199_179_60.csv'
-url_sus_23_24 = 'sia_cnv_qabr172537179_199_179_60.csv'
+url_sus_18_20 = 'https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/2018-2020.csv'
+url_sus_23_24 = 'https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/2023-2024.csv'
 
 # Lendo o arquivo de 2018 a 2020
 df_sus_18_20 = pd.read_csv(url_sus_18_20, sep=';', skiprows=4, skipfooter=1, engine='python', encoding='latin1')
@@ -41,6 +41,18 @@ df_sus_23_24 = pd.read_csv(url_sus_23_24, sep=';', skiprows=4, skipfooter=1, eng
 df_sus_23_24.columns = ['Capital', 'SUS_2023', 'SUS_2024', 'Total_23_24']
 df_sus_23_24['Capital'] = df_sus_23_24['Capital'].str.replace(r'^\d+\s*', '', regex=True).str.strip()
 
+
+
+colunas_18_20 = ['SUS_2018', 'SUS_2019', 'SUS_2020', 'Total_18_20']
+for col in colunas_18_20:
+    df_sus_18_20[col] = pd.to_numeric(df_sus_18_20[col].astype(str).str.replace('-', '0', regex=False), errors='coerce')
+
+colunas_23_24 = ['SUS_2023', 'SUS_2024', 'Total_23_24']
+for col in colunas_23_24:
+    df_sus_23_24[col] = pd.to_numeric(df_sus_23_24[col].astype(str).str.replace('-', '0', regex=False), errors='coerce')
+
+
+
 # Juntando tudo na mesma tabela
 df_final = pd.merge(df_pop_capitais, df_sus_18_20, on='Capital', how='inner')
 df_final = pd.merge(df_final, df_sus_23_24, on='Capital', how='inner')
@@ -51,7 +63,6 @@ df_final['PerCapita_2019'] = (df_final['SUS_2019'] / df_final['Pop_2019']).round
 df_final['PerCapita_2020'] = (df_final['SUS_2020'] / df_final['Pop_2020']).round(2)
 df_final['PerCapita_2023'] = (df_final['SUS_2023'] / df_final['Pop_2023']).round(2)
 df_final['PerCapita_2024'] = (df_final['SUS_2024'] / df_final['Pop_2024']).round(2)
-
 
 # 4. criar a planilha
 
