@@ -20,9 +20,9 @@ lista_capitais = [
 # Filtrar e limpar os números
 df_pop_capitais = df_pop[df_pop['Capital'].isin(lista_capitais)].copy()
 for ano in ['Pop_2018', 'Pop_2019', 'Pop_2020', 'Pop_2024']:
-    df_pop_capitais[ano] = pd.to_numeric(df_pop_capitais[ano].astype(str).str.replace('.', '', regex=False), errors='coerce')
+    df_pop_capitais[ano] = pd.to_numeric(df_pop_capitais[ano], errors='coerce')
 
-# o IBGE não deu 2023, vamos usar 2024
+# o IBGE não deu 2023, usar 2024
 df_pop_capitais['Pop_2023'] = df_pop_capitais['Pop_2024']
 
 
