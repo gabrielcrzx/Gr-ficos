@@ -51,18 +51,19 @@ df_qtd_regioes['Região/UF'] = df_qtd_regioes['Região/UF'].str.replace('Região
 df_valor_regioes2['Região/UF'] = df_valor_regioes2['Região/UF'].str.replace('Região ', '')
 df_qtd_regioes2['Região/UF'] = df_qtd_regioes2['Região/UF'].str.replace('Região ', '')
 
-# 4. Calcular o Valor Médio por Procedimento (Valor / Quantidade)
+# 4. Calcular as Médias por Complexidade (Valor / Quantidade)
 df_media = df_valor_regioes.copy()
 df_media2 = df_valor_regioes2.copy()
 
-# Média 2018-2020
-df_media['Média Geral'] = np.where(df_qtd_regioes['Total'] > 0, 
-                                 df_valor_regioes['Total'] / df_qtd_regioes['Total'], 
-                                 0)
-# Média 2023-2024
-df_media2['Média Geral'] = np.where(df_qtd_regioes2['Total'] > 0, 
-                                  df_valor_regioes2['Total'] / df_qtd_regioes2['Total'], 
-                                  0)
+# Médias 2018-2020
+df_media['Média Baixa'] = np.where(df_qtd_regioes['Atenção Básica'] > 0, df_valor_regioes['Atenção Básica'] / df_qtd_regioes['Atenção Básica'], 0)
+df_media['Média Média'] = np.where(df_qtd_regioes['Média complexidade'] > 0, df_valor_regioes['Média complexidade'] / df_qtd_regioes['Média complexidade'], 0)
+df_media['Média Alta'] = np.where(df_qtd_regioes['Alta complexidade'] > 0, df_valor_regioes['Alta complexidade'] / df_qtd_regioes['Alta complexidade'], 0)
+
+# Médias 2023-2024
+df_media2['Média Baixa'] = np.where(df_qtd_regioes2['Atenção Básica'] > 0, df_valor_regioes2['Atenção Básica'] / df_qtd_regioes2['Atenção Básica'], 0)
+df_media2['Média Média'] = np.where(df_qtd_regioes2['Média complexidade'] > 0, df_valor_regioes2['Média complexidade'] / df_qtd_regioes2['Média complexidade'], 0)
+df_media2['Média Alta'] = np.where(df_qtd_regioes2['Alta complexidade'] > 0, df_valor_regioes2['Alta complexidade'] / df_qtd_regioes2['Alta complexidade'], 0)
 
 # A divisão/fator de (1 milhão).
 fator = 1000000
@@ -76,7 +77,7 @@ plt.figure(figsize=(10, 6))
 
 plt.plot(df_qtd_regioes['Região/UF'], df_qtd_regioes['Atenção Básica'] / fator, marker='o', markersize=10, linewidth=3, label='Baixa Complexidade (Atenção Básica)')
 plt.plot(df_qtd_regioes['Região/UF'], df_qtd_regioes['Média complexidade'] / fator, marker='o', markersize=10, linewidth=3, label='Média Complexidade')
-plt.plot(df_qtd_regioes['Região/UF'], df_qtd_regioes['Alta complexidade'] / fator, marker='o', markersize=10, linewidth=3, label='Alta Complexidade')
+#plt.plot(df_qtd_regioes['Região/UF'], df_qtd_regioes['Alta complexidade'] / fator, marker='o', markersize=10, linewidth=3, label='Alta Complexidade')
 
 plt.title('Quantidade de Procedimentos por Região e Complexidade - (2018-2020)', fontsize=14)
 plt.ylabel('Quantidade de Procedimento (milhões)')
@@ -99,9 +100,9 @@ fig_linhas.add_trace(go.Scatter(x=df_qtd_regioes['Região/UF'], y=df_qtd_regioes
 mode='lines+markers', name='Média Complexidade',
 marker=dict(size=12), line=dict(width=3)))
 
-fig_linhas.add_trace(go.Scatter(x=df_qtd_regioes['Região/UF'], y=df_qtd_regioes['Alta complexidade'] / fator, 
-mode='lines+markers', name='Alta Complexidade',
-marker=dict(size=12), line=dict(width=3)))
+#fig_linhas.add_trace(go.Scatter(x=df_qtd_regioes['Região/UF'], y=df_qtd_regioes['Alta complexidade'] / fator, 
+#mode='lines+markers', name='Alta Complexidade',
+#marker=dict(size=12), line=dict(width=3)))
 
 fig_linhas.update_layout(
 title='Quantidade de Procedimentos por Região e Complexidade - (2018-2020)',
@@ -111,16 +112,20 @@ template='plotly_white')
 fig_linhas.show()
 
 
-# Gráfico B (Plotly) - Valor Médio (2018-2020)
+# Gráfico B (Plotly) - Valor Médio por Complexidade (2018-2020)
+fig_barras = go.Figure()
 
-fig_barras = go.Figure(data=[
-    go.Bar(name='Média Geral', x=df_media['Região/UF'], y=df_media['Média Geral'], text=df_media['Média Geral'].round(2), textposition='auto', width=0.4)
-])
+fig_barras.add_trace(go.Bar(name='Baixa Complexidade', x=df_media['Região/UF'], y=df_media['Média Baixa'], text=df_media['Média Baixa'].round(2), textposition='auto'))
+fig_barras.add_trace(go.Bar(name='Média Complexidade', x=df_media['Região/UF'], y=df_media['Média Média'], text=df_media['Média Média'].round(2), textposition='auto'))
+#fig_barras.add_trace(go.Bar(name='Alta Complexidade', x=df_media['Região/UF'], y=df_media['Média Alta'], text=df_media['Média Alta'].round(2), textposition='auto'))
 
-fig_barras.update_layout(title='Valor Médio por Procedimento (R$) por Região - (2018-2020)',
+fig_barras.update_layout(
+title='Custo Médio por Procedimento e Complexidade - (2018-2020)',
 xaxis_title='Região',
 yaxis_title='Valor Médio (R$)',
-barmode='group')
+barmode='group', # Agrupa as barras lado a lado
+template='plotly_white'
+)
 fig_barras.show()
 
 
@@ -131,7 +136,7 @@ plt.figure(figsize=(10, 6))
 
 plt.plot(df_qtd_regioes2['Região/UF'], df_qtd_regioes2['Atenção Básica'] / fator, marker='o', markersize=10, linewidth=3, label='Baixa Complexidade (Atenção Básica)')
 plt.plot(df_qtd_regioes2['Região/UF'], df_qtd_regioes2['Média complexidade'] / fator, marker='o', markersize=10, linewidth=3, label='Média Complexidade')
-plt.plot(df_qtd_regioes2['Região/UF'], df_qtd_regioes2['Alta complexidade'] / fator, marker='o', markersize=10, linewidth=3, label='Alta Complexidade')
+#plt.plot(df_qtd_regioes2['Região/UF'], df_qtd_regioes2['Alta complexidade'] / fator, marker='o', markersize=10, linewidth=3, label='Alta Complexidade')
 
 plt.title('Quantidade de Procedimentos por Região e Complexidade - (2023-2024)', fontsize=14)
 plt.ylabel('Quantidade de Procedimento (milhões)')
@@ -154,9 +159,9 @@ fig_linhas2.add_trace(go.Scatter(x=df_qtd_regioes2['Região/UF'], y=df_qtd_regio
 mode='lines+markers', name='Média Complexidade',
 marker=dict(size=12), line=dict(width=3)))
 
-fig_linhas2.add_trace(go.Scatter(x=df_qtd_regioes2['Região/UF'], y=df_qtd_regioes2['Alta complexidade'] / fator, 
-mode='lines+markers', name='Alta Complexidade',
-marker=dict(size=12), line=dict(width=3)))
+#fig_linhas2.add_trace(go.Scatter(x=df_qtd_regioes2['Região/UF'], y=df_qtd_regioes2['Alta complexidade'] / fator, 
+#mode='lines+markers', name='Alta Complexidade',
+#marker=dict(size=12), line=dict(width=3)))
 
 fig_linhas2.update_layout(
 title='Quantidade de Procedimentos por Região e Complexidade - (2023-2024)',
@@ -166,14 +171,19 @@ template='plotly_white')
 fig_linhas2.show()
 
 
-# Gráfico B (Plotly) - Valor Médio (2023-2024)
 
-fig_barras2 = go.Figure(data=[
-    go.Bar(name='Média Geral', x=df_media2['Região/UF'], y=df_media2['Média Geral'], text=df_media2['Média Geral'].round(2), textposition='auto', width=0.4)
-])
+# Gráfico B (Plotly) - Valor Médio por Complexidade (2023-2024)
+fig_barras2 = go.Figure()
 
-fig_barras2.update_layout(title='Valor Médio por Procedimento (R$) por Região - (2023-2024)',
+fig_barras2.add_trace(go.Bar(name='Baixa Complexidade', x=df_media2['Região/UF'], y=df_media2['Média Baixa'], text=df_media2['Média Baixa'].round(2), textposition='auto'))
+fig_barras2.add_trace(go.Bar(name='Média Complexidade', x=df_media2['Região/UF'], y=df_media2['Média Média'], text=df_media2['Média Média'].round(2), textposition='auto'))
+#fig_barras2.add_trace(go.Bar(name='Alta Complexidade', x=df_media2['Região/UF'], y=df_media2['Média Alta'], text=df_media2['Média Alta'].round(2), textposition='auto'))
+
+fig_barras2.update_layout(
+title='Custo Médio por Procedimento e Complexidade - (2023-2024)',
 xaxis_title='Região',
 yaxis_title='Valor Médio (R$)',
-barmode='group')
+barmode='group', 
+template='plotly_white'
+)
 fig_barras2.show()
