@@ -3,7 +3,7 @@ import pandas as pd
 # 1. carregar
 
 url_pop = 'https://raw.githubusercontent.com/gabrielcrzx/Gr-ficos/main/arquivos_csv/Populacao2018-2020e2024.csv' 
-df_pop = pd.read_csv(url_pop, sep=';', skiprows=2, engine='python')
+df_pop = pd.read_csv(url_pop, sep=';', skiprows=3, engine='python')
 
 # Renomeando
 df_pop.columns = ['Capital', 'Pop_2018', 'Pop_2019', 'Pop_2020', 'Pop_2024']
